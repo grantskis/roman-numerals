@@ -33,15 +33,15 @@ As taken from the [Epicodus program's cirriculum](https://www.learnhowtoprogram.
   ## Projected Code // Test Specifications:
 
   _Intention: verify number can be used for converter._
-  Describe: useableNumber()
+  Describe: usableNumber()
   Test: "It returns false for numbers greater than or equal to 4,000."
-  Expect(useableNumber(4001)).toEqual(false);
+  Expect(usableNumber(4001)).toEqual(false);
 
   Test: "It returns false for numbers less than or equal to 0."
-  Expect(useableNumber(-5))toEqual(false);
+  Expect(usableNumber(-5))toEqual(false);
 
   Test: "It returns false for mixed numbers or fractions."
-  Expect(useableNumber(3.75))toEqual(false);
+  Expect(usableNumber(3.75))toEqual(false);
 
 _Intention: verify and prepare number for modification in the thousands place_
   Describe: overOneThousand()
