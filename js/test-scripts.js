@@ -101,6 +101,7 @@ function addM(number) {
 //
 
 let remainder = [];
+let chainArray = [];
 function addM(number) {
   let outputThousandsPlace = [];
   while 
@@ -109,7 +110,7 @@ function addM(number) {
     number -= 1000;
   };
   (remainder = number);
-  mchainArray.push(outputThousandsPlace.join(""));
+  chainArray.push(outputThousandsPlace.join(""));
 };
 
 function addC(number) {
@@ -144,11 +145,14 @@ function addI(number) {
   (remainder = number);
   chainArray.push(outputOnesPlace.join(""));
 };
-addM(3514);
-addC(remainder);
-addX(remainder);
-addI(remainder);
-console.log(remainder, mPlace, cPlace, xPlace, iPlace);
+
+function allAdds(number) {
+  addM(number);
+  addC(remainder);
+  addX(remainder);
+  addI(remainder);
+  console.log(chainArray);
+};
 
 let iPlace = "IIIIIIIII"
 function reduce(value) {
@@ -178,3 +182,39 @@ console.log(iPlace);
 
 
 const theVs = /I{5}I*/i;
+
+
+
+
+
+
+// REMOVE EMPTY ARRAY VALUES // 
+function cleanUp() {
+  if (chainArray[0] === "") {
+    return false;
+  }
+  else {
+    return true;
+  };
+};
+
+
+
+
+
+
+
+
+
+
+function fivePlus(element) {
+  const check = /I{5}/i;
+  if (check.test(element.substring(0))) {
+    newElement = element.replace(check, "V")
+    console.log(newElement)
+  } else {
+    return false;
+  };
+};
+
+fivePlus("IIIIIIII")
