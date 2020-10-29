@@ -68,3 +68,24 @@ _Intention: verify and prepare number for modification in the tens place_
   Expect:(overTen(3)).toEqual(false);
 
 
+_Intention: push corresponding variable to array for every value of 1n._
+  Describe: addI()
+  Test: "It returns a string with as many I's as number input."
+  Expect:(addI(7).toEqual("IIIIIII");
+
+  Repeat test for 10 -> X, 100 -> C, and 1000 -> M.
+
+  _Intention: push remainder to subsequent function._
+  Test: "It saves the remaining number < _1n_ to be used in the next equation.
+  Expect: // code for loop using number -= _1n_ // }; (remainder = number);
+
+
+_Intention: reduce "XXXXXXXXX" to proper Roman numeral notation in as few steps as possible._
+Test: "It converts exact value XXXXXXXXX (9 X's) to XC (90)."
+Code: if (outputTensPlace === "XXXXXXXXX") {outputTensPlace = "XC"}, else..
+
+Test: "It converts exact value XXXX (4 X's) to XL (40)."
+Code: if (outputTensPlace === "XXXX") {outputTensPlace = "XL"}, else..
+
+Test: "It converts initial string XXXXX (5 X's) to L (50)."
+Code: if (outputTensPlace === "XXXXX") {outputTensPlace = "L"}
