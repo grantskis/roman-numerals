@@ -47,19 +47,19 @@ function addI(number) {
 };
 
 function allAdds(number) {
+  chainArray = [];
   addM(number);
   addC(remainder);
   addX(remainder);
   addI(remainder);
-
+  
   chainArray.forEach(function(variable) {
-    let c1 = variable.charAt(0);
-    let c2 = variable.charAt(1);
-    let c3 = variable.charAt(2);
-    let c4 = variable.charAt(3);
-    let c5 = variable.charAt(4);
-    if ( c1 === c2 &&  c3 === c4 && c2 === c5 && c3 === c5 ) {
-      if ( c1 === "I") {
+    let digit1 = variable.charAt(0);
+    let digit2 = variable.charAt(1);
+    let digit3 = variable.charAt(2);
+    let digit4 = variable.charAt(3);
+    if ( digit1 === digit2 &&  digit3 === digit4 && digit2 === digit4 ) {
+      if ( digit1 === "I") {
         if (variable === "IIIIIIIII") {
           variable = "IX"
         }
@@ -70,7 +70,7 @@ function allAdds(number) {
           variable = variable.replace(/I{5}/, "V");
         }
         chainArray[3] = variable;
-      } else if ( c1 === "X") {
+      } else if ( digit1 === "X") {
         if (variable === "XXXXXXXXX") {
           variable = "XC";
         } else if (variable === "XXXX") {
@@ -79,7 +79,7 @@ function allAdds(number) {
           variable = variable.replace(/X{5}/, "L");
       }
         chainArray[2] = variable;
-      } else if ( c1 === "C") {
+      } else if ( digit1 === "C") {
         if (variable === "CCCCCCCCC") {
           variable = "CM";
         } else if (variable === "CCCC") {
@@ -89,25 +89,23 @@ function allAdds(number) {
         };
         chainArray[1] = variable;
       } else {
-          console.log("How did you even get this error?")
+        return false;
         }
     } else {
-    return false; 
+      return false;
     };
     });
-  chainArray.forEach(function(linkOfChain) {
+    finalChain = "";
+    chainArray.forEach(function(linkOfChain) {
     finalChain = finalChain.concat(linkOfChain);
   });
-  console.log(finalChain)
   };
 
 function usableNumber(number) {
   if (number >= 4000) {
-    return false;
-  } else if (number < 0) {
-    return false;
-  } else if (number % 1 !== 0) {
-    return false;
+    finalChain = "This number is too big!";
+  } else if (number <= 0) {
+    finalChain = "This number is too small!";
   } else {
     allAdds(number);
   }
@@ -116,18 +114,12 @@ function usableNumber(number) {
 
 // USER LOGIC... LMAO
 $(document).ready(function() {
-  $(#number-box).submit(function(event) {
-    event.preventDefault();
-    const arabicNumerals = $("input#numbers").val();
+  $("form#box").submit(function(event) {
+    const arabicNumerals = parseInt($("input#numbers").val());
     usableNumber(arabicNumerals);
-    $(".romanNumerals").text(finalChain);
-    $(".output").show();
+    const outputFinal = finalChain;
+    $("#romanNumerals").text(outputFinal);
+    $("#output").show();
+    event.preventDefault();
   });
 });
-
-
-
-
-
-usableNumber()
-
