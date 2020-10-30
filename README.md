@@ -89,3 +89,9 @@ Code: if (outputTensPlace === "XXXX") {outputTensPlace = "XL"}, else..
 
 Test: "It converts initial string XXXXX (5 X's) to L (50)."
 Code: if (outputTensPlace === "XXXXX") {outputTensPlace = "L"}
+
+
+
+_Intention: target empty spaces in Array_
+Test: "Finds empty/filled spaces in Array to convert numbers."
+Code: if (array[0] = "") { return true } else { return false }
