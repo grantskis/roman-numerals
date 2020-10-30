@@ -42,7 +42,7 @@ As taken from the [Epicodus program's cirriculum](https://www.learnhowtoprogram.
 - Currently not styled on the front end, dummy placeholder text is still in place.
 
 ### Setup
-To view live on the web, please visit [this GitHub.io page](grantskis.github.io/roman-numerals)
+To view live on the web, please visit [this GitHub.io page](https://grantskis.github.io/roman-numerals)
 
 To view locally on your machine, please:
 - Find the green **Code** button above the file list on this project's [main GitHub repository page](https://github.com/grantskis/roman-numerals.git).
