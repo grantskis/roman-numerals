@@ -52,6 +52,32 @@ function allAdds(number) {
   console.log(chainArray);
 };
 
+chainArray.forEach(function(variable) {
+  let c1 = variable.charAt(0);
+  let c2 = variable.charAt(1);
+  let c3 = variable.charAt(2);
+  let c4 = variable.charAt(3);
+  let c5 = variable.charAt(4);
+  if ( c1 === c2 &&  c3 === c4 && c2 === c5 && c3 === c5 ) {
+    if ( c1 === "I") {
+      variable = variable.replace("IIIII", "V");
+    } else if ( c1 === "X") {
+      variable = variable.replace("XXXXX", "L");
+    } else if ( c1 === "C") {
+      variable = variable.replace("CCCCC", "D");
+    } else {
+        console.log("How did you even get this error?")
+      }
+  } else {
+  return false; 
+  };
+  console.log(variable);
+  console.log(chainArray);
+  });
+
+
+
+
 function usableNumber(number) {
   if (number >= 4000) {
     return false;
@@ -64,3 +90,4 @@ function usableNumber(number) {
   }
 };
 
+usableNumber()
